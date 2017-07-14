@@ -21,14 +21,6 @@ files=$(ssh ${username}@${router_ip} -C "ls ${remote_log_dir}" 2> /dev/null)
 echo -e "\nfiles:\n${files}"
 
 
-# h=$(echo ${files} | cut -d ' ' -f 1)
-# echo "h:"
-# echo ${h}
-# ssh ${username}@${router_ip} -C "catv ${remote_log_dir}/${h}" > "./${local_log_dir}/${h}" 2>/dev/null;
-# echo "fetched: "
-# du -kh "./${local_log_dir}/${h}"
-
-
 echo "\n\nfetched: "
 for f in $files;
 do
